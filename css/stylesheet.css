@@ -14,8 +14,12 @@ h2 {
 
 li {
     color: #e67e22;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    /* padding-top: 10px;
+    padding-bottom: 10px; */
+    list-style-type: none;
+    padding: 10px 0px 10px 0px;
+    margin: 0px;
+    
 }
 
 a {
@@ -25,4 +29,8 @@ a {
 
 a:hover {
     color: #00bcd4;
+}
+
+p {
+    color: #e67e22;
 }
