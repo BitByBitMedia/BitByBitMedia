@@ -5,7 +5,11 @@ body {
 
 h1 {
     color: #e67e22;
-
+    text-align: center;       /* Centers the text horizontally */
+  margin: 0 auto;           /* Centers block elements if they have a set width */
+  width: 90%;               /* Keeps text responsive with some padding on the sides */
+  max-width: 800px;         /* Prevents text from stretching too wide on large screens */
+  box-sizing: border-box;
 }
 
 h2 {
@@ -19,6 +23,11 @@ li {
     list-style-type: none;
     padding: 10px 0px 10px 0px;
     margin: 0px;
+    text-align: center;
+  margin: 0 auto;
+  width: 90%;
+  max-width: 800px;
+  box-sizing: border-box;
     
 }
 
@@ -33,4 +42,54 @@ a:hover {
 
 p {
     color: #e67e22;
+    text-align: center;       /* Centers the text horizontally */
+  margin: 0 auto;           /* Centers block elements if they have a set width */
+  width: 90%;               /* Keeps text responsive with some padding on the sides */
+  max-width: 800px;         /* Prevents text from stretching too wide on large screens */
+  box-sizing: border-box;
+  padding: 50px;
+}
+
+header .Banner {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;   /* ensures it scales down on small screens */
+  height: auto;      /* maintains the aspect ratio */
+}
+
+footer .logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;   /* ensures it scales down on small screens */
+  height: auto;      /* maintains the aspect ratio */
+}
+
+.navbar {
+  background-color: #2c3e50;
+  padding: 15px 0;
+}
+
+/* Make the nav items go straight across */
+.navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+/* Add space between links */
+.navbar li {
+  margin: 0 25px;
+}
+
+/* Style the links */
+.navbar a {
+  color: #e67e22;             /* Default color */
+  text-decoration: none;      /* Remove underline */
+}
+
+/* Hover effect */
+.navbar a:hover {
+  color: #00bcd4;             /* Hover color */
 }
