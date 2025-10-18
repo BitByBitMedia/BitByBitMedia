@@ -96,3 +96,30 @@ footer .logo {
 .navbar a:hover {
   color: #00bcd4;             /* Hover color */
 }
+
+.figure-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+  /* creates as many columns as fit, each min 250px wide */
+  gap: 1rem;                      /* space between items */
+  max-width: 1200px;              /* optional layout limit */
+  margin: 0 auto;                 /* center the grid on the page */
+  padding: 1rem;
+}
+
+.figure-container figure {
+  text-align: center;
+  margin: 0;
+}
+
+.figure-container img {
+  width: 100%;                    /* scale image to grid cell */
+  height: auto;                   /* maintain aspect ratio */
+  border-radius: 8px;             /* optional rounded corners */
+}
+
+.figure-container figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #555;
+}
