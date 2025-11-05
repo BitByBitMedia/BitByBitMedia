@@ -1,196 +1,309 @@
 /* ===========================
-   Global Styles
+   Global Styles & Variables
 =========================== */
+:root {
+    /* Define color palette */
+    --color-primary: #e67e22; /* Your current highlight color (Orange) */
+    --color-secondary: #00bcd4; /* Your current hover color (Cyan) */
+    --color-background: #2c3e50; /* Your current background color (Dark Blue/Gray) */
+    --color-text-alt: #6f7276; /* Figcaption/Subtle text */
+    --color-white: #ffffff;
+
+    /* Font stack placeholder (To be finalized) */
+    --font-stack: 'Arial', Helvetica, sans-serif;
+}
+
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-  background-color: #2c3e50;
-  margin: 20px;
-  font-family: Arial, Helvetica, sans-serif;
-  color: #e67e22;
+    background-color: var(--color-background);
+    font-family: var(--font-stack);
+    color: var(--color-primary);
+    padding-top: 80px; /* Space for the fixed navigation bar */
 }
 
-/* Headings and paragraphs — centered, constrained content */
+/* Headings and paragraphs — constrained content */
 h1, h2 {
-  color: #e67e22;
-  text-align: center;
-  margin: 0 auto;
-  width: 90%;
-  max-width: 800px;
-  padding: 0.25rem 0;
+    color: var(--color-primary);
+    text-align: center;
+    margin: 1rem auto;
+    width: 90%;
+    max-width: 800px;
 }
 
 p {
-  color: #e67e22;
-  text-align: center;
-  margin: 0 auto;
-  width: 90%;
-  max-width: 800px;
-  padding: 50px 1rem;
-  line-height: 1.6;
+    color: var(--color-primary);
+    text-align: center;
+    margin: 0 auto 2rem auto;
+    width: 90%;
+    max-width: 800px;
+    padding: 1rem 1rem;
+    line-height: 1.6;
 }
 
 /* ===========================
    Links
 =========================== */
 a {
-  color: #e67e22;
-  text-decoration: none;
-  transition: color 0.2s ease;
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color 0.2s ease;
 }
 
 a:hover {
-  color: #00bcd4;
+    color: var(--color-secondary);
 }
 
 /* ===========================
    Lists (default list styling reset)
 =========================== */
 ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-/* Default list item styling used on content lists (not nav) */
-.content-list li {
-  color: #e67e22;
-  padding: 10px 0;
-  text-align: center;
-  margin: 0 auto;
-  width: 90%;
-  max-width: 800px;
+    list-style: none;
 }
 
 /* ===========================
    Header & Navigation
 =========================== */
-header .Banner {
-  display: block;
-  margin: 0 auto;
-  max-width: 100%;
-  height: auto;
+.navbar-container {
+    background-color: var(--color-background);
+    position: fixed; /* Stays with the user */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Ensures it is on top of other content */
+    border-bottom: 2px solid var(--color-primary);
 }
 
-/* Navbar wrapper */
 .navbar {
-  background-color: #2c3e50;
-  padding: 15px 0;
+    display: flex;
+    justify-content: space-between; /* Logo left, links right */
+    align-items: center;
+    max-width: 1200px; /* Max width for the content inside the nav */
+    margin: 0 auto;
+    padding: 10px 20px;
 }
 
-/* Navbar list styling (horizontal) */
-.navbar ul {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem; /* spacing between nav items */
-  margin: 0;
-  padding: 0;
-  list-style: none;
+.navbar-logo {
+    height: 50px; /* Set a fixed height for the logo */
+    width: auto;
 }
 
-/* Navbar items — keep them inline and unaffected by content constraints */
-.navbar li {
-  margin: 0;
+.navbar-links ul {
+    display: flex;
+    gap: 1.5rem;
 }
 
-/* Navbar links */
 .navbar a, .navbar strong {
-  color: #e67e22;
-  font-weight: 700;
-  text-decoration: none;
-  display: inline-block;
+    font-weight: 700;
+    padding: 0.5rem 0;
+    display: block;
 }
 
-.navbar a:hover {
-  color: #00bcd4;
+.main-banner {
+    display: block;
+    margin: 0 auto 2rem auto;
+    max-width: 100%;
+    width: 800px;
+    height: auto;
 }
 
 /* ===========================
-   Featured Content
+   Main Content Layout
 =========================== */
-.featured-content {
-  text-align: center;
-  margin: 0 auto;
-  padding: 20px 0;
-  width: 100%;
+main {
+    padding: 0 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.featured-content figure {
-  display: inline-block;
-  margin: 20px;
-  vertical-align: top;
+/* --- Featured Content (Index Page) --- */
+.featured-content-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid */
+    gap: 20px;
+    justify-items: center;
+    align-items: start;
+    padding: 20px;
+    width: 90%;
+    max-width: 1000px;
+    margin: 2rem auto;
 }
 
-figure {
-  margin: 0;
-  padding: 0 20px 20px 0;
+.featured-content-grid figure {
+    text-align: center;
+    margin: 0;
+}
+
+.featured-content-grid img {
+    height: 180px;
+    width: 180px;
+    object-fit: contain;
+    border: 3px solid var(--color-primary);
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.featured-content-grid img:hover {
+    transform: scale(1.05);
+    border-color: var(--color-secondary);
 }
 
 figcaption {
-  font-size: 13px;
-  font-weight: 900;
-  color: #6f7276;
-  padding-top: 3px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--color-text-alt);
+    padding-top: 0.5rem;
 }
 
-/* ===========================
-   Images
-=========================== */
-footer .logo,
-.featured-content img {
-  height: 250px;
-  width: 250px;
-  object-fit: contain;
-  display: block;
-  
+/* --- Links Page List --- */
+.links-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    max-width: 500px;
+    margin: 1rem auto 2rem auto;
 }
 
-header .Banner {
-  display: block;
-  margin: 0 auto;
-  max-width: 100%;   /* keeps it responsive */
-  width: 800px;      /* adjust this to control banner size */
-  height: auto;      /* maintains aspect ratio */
+.links-list li {
+    padding: 0.75rem 0;
+    width: 100%;
+    border-bottom: 1px dashed var(--color-primary);
+}
+
+.links-list li:last-child {
+    border-bottom: none;
+}
+
+.links-list a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.links-list i {
+    margin-right: 0.75rem;
+    min-width: 20px;
+    text-align: center;
 }
 
 /* ===========================
    Footer
 =========================== */
-footer .logo {
-  display: block;
-  margin: 40px auto;
-  max-width: 100%;
-  width: 250px;
-  height: 250px;
+.site-footer {
+    background-color: var(--color-background);
+    padding: 40px 20px;
+    border-top: 2px solid var(--color-primary);
+    display: flex; /* Flexbox for layout */
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap; /* Allows sections to stack on small screens */
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-/* Centered list just for the Links page */
-.links-list {
-  list-style: none;
-  padding: 0;
-  margin: 0 auto;
-  width: 90%;
-  max-width: 800px;
-  text-align: center;
+.footer-section {
+    flex-basis: 30%; /* Gives each main section room */
+    padding: 10px;
+    min-width: 200px; /* Prevents shrinking too much */
 }
 
-.links-list li {
-  padding: 10px 0;
+.footer-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex-grow: 1; /* Allows it to take up available space */
 }
 
-.links-list a {
-  color: #e67e22;
-  text-decoration: none;
-  font-weight: bold;
-  display: inline-block;
-  transition: color 0.2s ease;
+.footer-logo {
+    height: 100px;
+    width: 100px;
+    object-fit: contain;
+    margin-bottom: 10px;
 }
 
-.links-list a:hover {
-  color: #00bcd4;
+.footer-left-contact, .footer-right-nav {
+    text-align: left;
+}
+
+.footer-right-nav {
+    text-align: right;
+}
+
+.footer-right-nav ul {
+    list-style: none;
+}
+
+.footer-right-nav a {
+    font-weight: 400;
+    padding: 3px 0;
+    display: block;
+}
+
+.footer-copyright {
+    color: var(--color-text-alt);
+    font-size: 0.8rem;
+    margin-top: 10px;
+    width: 100%; /* Spans full width */
+    text-align: center;
+    padding-top: 15px;
+    border-top: 1px dashed var(--color-text-alt);
+}
+
+/* ===========================
+   Responsive Design (Mobile First)
+=========================== */
+
+/* Tablet and larger screens (Adjustments for the fixed nav) */
+@media (min-width: 768px) {
+    .navbar {
+        padding: 10px 40px;
+    }
+}
+
+/* Mobile Layout for Navbar and Footer stacking */
+@media (max-width: 767px) {
+    /* Navbar: Stack the links vertically */
+    .navbar {
+        flex-direction: column;
+        padding: 10px 20px;
+    }
+
+    .navbar-links ul {
+        gap: 0.5rem;
+        padding-top: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    /* Footer: Stack sections vertically */
+    .site-footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .footer-section {
+        flex-basis: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .footer-right-nav {
+        text-align: center;
+    }
+
+    .footer-right-nav ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 }
