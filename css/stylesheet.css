@@ -10,7 +10,10 @@
     --color-white: #ffffff;
 
     /* Font stack placeholder (To be finalized) */
-    --font-stack: 'Arial', Helvetica, sans-serif;
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+
 }
 
 *,
@@ -23,9 +26,10 @@
 
 body {
     background-color: var(--color-background);
-    font-family: var(--font-stack);
+    font-family: 'Roboto', sans-serif;
     color: var(--color-primary);
     padding-top: 80px; /* Space for the fixed navigation bar */
+
 }
 
 /* Headings and paragraphs — constrained content */
