@@ -1,16 +1,14 @@
 /* ===========================
     Global Styles & Variables
 =========================== */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 :root {
   
   --color-primary: #e67e22; 
   --color-secondary: #00bcd4; 
   --color-background: #2c3e50; 
   --color-text-alt: #6f7276; 
-  --color-white: #ffffff;
-
-  
-  @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+  --color-white: #ffffff; 
 }
 
 *,
@@ -175,10 +173,6 @@ figcaption {
   border-radius: 8px; 
   margin-bottom: 15px; 
   transition: transform 0.2s ease; 
-}
-
-.links-list li:last-child {
-  
 }
 
 .links-list a {
