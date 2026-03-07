@@ -80,6 +80,19 @@ ul {
 /* ===========================
     Navbar
 =========================== */
+/* Waffle menu hidden by default on desktop */
+.nav-toggle, 
+.nav-toggle-label {
+  display: none;
+}
+
+.nav-toggle-label {
+  color: var(--color-white);
+  font-size: 1.8rem;
+  cursor: pointer;
+  margin-left: auto;
+}
+
 .navbar-container {
   background-color: rgba(44, 62, 80, 0.85);
   backdrop-filter: blur(12px);
@@ -403,15 +416,34 @@ figcaption {
   }
   
   .navbar {
-    flex-direction: column;
-    padding: 10px 15px;
+    flex-direction: row;
+    padding: 15px 20px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .nav-toggle-label {
+    display: block;
+  }
+
+  /* Hide links by default */
+  .navbar-links {
+    display: none;
+    width: 100%;
+    text-align: center;
+    padding-top: 15px;
+  }
+
+  /* Show links when checked */
+  .nav-toggle:checked ~ .navbar-links {
+    display: block;
   }
 
   .navbar-links ul {
+    flex-direction: column;
     gap: 0.8rem;
     padding-top: 10px;
-    flex-wrap: wrap;
-    justify-content: center;
+    align-items: center;
   }
 
   .main-banner {
