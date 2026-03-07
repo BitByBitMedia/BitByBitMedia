@@ -416,19 +416,19 @@ figcaption {
   }
   
   .navbar {
-    flex-direction: row;
+    flex-direction: column;
     padding: 15px 20px;
-    flex-wrap: wrap;
     align-items: center;
   }
 
+  .nav-toggle, 
   .nav-toggle-label {
-    display: block;
+    display: none !important;
   }
 
-  /* Hide links by default */
+  /* Show links always */
   .navbar-links {
-    display: none;
+    display: block;
     width: 100%;
     text-align: center;
     padding-top: 15px;
@@ -440,10 +440,11 @@ figcaption {
   }
 
   .navbar-links ul {
-    flex-direction: column;
+    flex-direction: row;
     gap: 0.8rem;
     padding-top: 10px;
     align-items: center;
+    justify-content: center;
   }
 
   .main-banner {
