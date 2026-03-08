@@ -24,7 +24,7 @@ body {
   background-color: var(--color-background);
   font-family: 'Roboto', sans-serif;
   color: var(--color-text);
-  padding-top: 100px; 
+  margin: 0;
   line-height: 1.7;
 }
 
@@ -177,7 +177,7 @@ ul {
 }
 
 main {
-  padding: 0 1rem;
+  padding: 86px 1rem 0; /* Add padding equal to navbar height to push content down */
   max-width: 1200px;
   margin: 0 auto;
 }
